@@ -44,8 +44,8 @@ public class CheckListController {
     @PostMapping(value = {"/saveData"}, consumes = MediaType.APPLICATION_JSON_VALUE) // JSON 타입의 요청만 받음
     public ResponseEntity<Long> saveQueryResult(@RequestBody PostQueryDTO postQueryDTO){
         log.info(postQueryDTO);
-        Long rno = checkListService.saveQueryResult(postQueryDTO);
-        return new ResponseEntity<>(rno, HttpStatus.OK);
+        Long dno = checkListService.saveQueryResult(postQueryDTO);
+        return new ResponseEntity<>(dno, HttpStatus.OK);
     }
     @PostMapping(value = {"/saveQuery"}, consumes = MediaType.APPLICATION_JSON_VALUE) // JSON 타입의 요청만 받음
     public ResponseEntity<String> saveQuery(@RequestBody QueryListEntity queryListEntity){

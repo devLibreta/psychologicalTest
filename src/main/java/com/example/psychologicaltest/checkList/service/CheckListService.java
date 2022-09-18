@@ -1,7 +1,9 @@
 package com.example.psychologicaltest.checkList.service;
 
+import com.example.psychologicaltest.checkList.dto.AnswerDTO;
 import com.example.psychologicaltest.checkList.dto.GetQueryDTO;
 import com.example.psychologicaltest.checkList.dto.PostQueryDTO;
+import com.example.psychologicaltest.checkList.entity.AnswerDataEntity;
 import com.example.psychologicaltest.checkList.entity.QueryListEntity;
 import com.example.psychologicaltest.checkList.entity.QuerySaveDataEntity;
 
@@ -13,7 +15,6 @@ public interface CheckListService {
     Long saveQueryResult(PostQueryDTO postQueryDTO);
     void saveQuery(QueryListEntity queryListEntity);
 
-
     default QuerySaveDataEntity dtoToEntity(PostQueryDTO postQueryDTO){
         LocalDateTime now = LocalDateTime.now();
         return QuerySaveDataEntity.builder()
@@ -24,12 +25,18 @@ public interface CheckListService {
     }
 
 
-    default GetQueryDTO entityToDto(QueryListEntity queryLIstEntity){
+    default GetQueryDTO entityToDto(QueryListEntity queryListEntity){
         return GetQueryDTO.builder()
-                .id(queryLIstEntity.getId())
-                .question(queryLIstEntity.getQuestion())
-                .selection01(queryLIstEntity.getSelection01())
-                .selection02(queryLIstEntity.getSelection02())
+                .id(queryListEntity.getId())
+                .question(queryListEntity.getQuestion())
+                .selection01(queryListEntity.getSelection01())
+                .selection02(queryListEntity.getSelection02())
                 .build();
     }
+
+//    default AnswerDataEntity toEntity(AnswerDTO answerDTO){
+//        return AnswerDataEntity.builder()
+//                .answerNumber(answerDTO.getAnswerNumber())
+//                .
+//    }
 }
