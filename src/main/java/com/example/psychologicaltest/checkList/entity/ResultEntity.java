@@ -14,14 +14,15 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @ToString
 @Builder
-public class QueryListEntity {
+public class ResultEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String question;
-    private String a1;
-    private String a2;
-    private String a3;
-    private String a4;
-    private String a5;
+    private String resultText;
+    private String r1;
+    private String r2;
+    private String r3;
+    private String r4;
+    private String r5;
+
 }

@@ -16,8 +16,11 @@ public class QuerySaveDataEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String selection;
-    private Boolean sex;
+    private int selectedQueryId;
+    private int selectedNum;
+    private String resultText;
+    private String result;
+    private Boolean sex; // true women, false man.
     private int age;
 
 }
